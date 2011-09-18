@@ -44,6 +44,7 @@
     wordsToBytes: function(words) {
       for (var bytes = [], b = 0; b < words.length * 32; b += 8)
         bytes.push((words[b >>> 5] >>> (24 - b % 32)) & 0xFF);
+      return bytes;
     },
 
     // Convert a byte array to a hex string
@@ -85,9 +86,11 @@
         if (imod4 == 0) continue;
         bytes.push(((base64map.indexOf(base64.charAt(i - 1))
             & (Math.pow(2, -2 * imod4 + 8) - 1)) << (imod4 * 2))
-            | (base64map.indexOf(base64.charAt(i)) >>> (6 - imod4 * 2))));
+            | (base64map.indexOf(base64.charAt(i)) >>> (6 - imod4 * 2)));
       }
       return bytes;
     }
   };
+
+  module.exports = crypt;
 })();
