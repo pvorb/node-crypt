@@ -1,1 +1,2 @@
+[![build status](https://secure.travis-ci.org/pvorb/node-crypt.png)](http://travis-ci.org/pvorb/node-crypt)
 **crypt** provides utilities for encryption and hashing
