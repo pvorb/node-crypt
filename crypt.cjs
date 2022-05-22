@@ -91,4 +91,4 @@ crypt = {
     }
 };
   
-export default crypt;
+module.exports = crypt;
